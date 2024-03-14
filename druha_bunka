@@ -1,0 +1,20 @@
+
+menu = widgets.Dropdown(options=lokality,description='Lokalita:')
+output = widgets.Output()  # Oprava překlepu z "ouput" na "output"
+
+def filtruj(change):
+    print(f'registruji zmenu {change.new}')
+    with output:
+        output.clear_output()
+        lokalita = change.new
+        df = df_hlavni.loc[df_hlavni['NAME'] == lokalita]
+        plt.figure(figsize=(10, 6))  # Nastaví velikost grafu
+        plt.plot(df['ROK'], df['TMAX'])  # Vytvoří graf
+
+        plt.show()
+
+menu.observe(filtruj, names='value')
+
+display(menu)
+display(output)
+
