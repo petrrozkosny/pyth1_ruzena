@@ -1,0 +1,23 @@
+import pandas as pd
+import pathlib
+import matplotlib.pyplot as plt
+import ipywidgets as widgets
+
+cesta_slozky = r'C:\Users\Student\Downloads\data\data\meteo1'
+cesta_excel = r'C:\Users\Student\Downloads\data\data\dim_geo.xlsx'
+soubory = pathlib.Path(cesta_slozky).glob('*.csv')
+df_list = []
+for soubor in soubory:
+    
+    df = pd.read_csv(soubor)
+    
+    df_list.append(df)
+
+df_excel = pd.read_excel(cesta_excel)
+df_hlavni = pd.concat(df_list)
+
+df_hlavni = pd.merge(df_hlavni,df_excel,how='left',left_on='STATION',right_on='lokalita')
+df_hlavni['DATE'] =  pd.to_datetime(df_hlavni['DATE'])
+lokality = df_hlavni['NAME'].unique().tolist()
+df_hlavni['ROK'] = df_hlavni['DATE'].dt.year
+df_hlavni = df_hlavni.groupby(['ROK','NAME'])['TMAX'].sum().reset_index()
