@@ -1,0 +1,45 @@
+slovnik = {
+    'cesko': {
+        'hlavni mesto': 'Praha',
+        'mena': 'CZK',
+        'dulezita mesta': ['Brno', 'Ostrava', 'Plzeň']
+    },
+    'slovensko': {
+        'hlavni mesto': 'Bratislava',
+        'mena': 'EUR',
+        'dulezita mesta': ['Košice', 'Prešov', 'Žilina']
+    },
+    'rakousko': {
+        'hlavni mesto': 'Vídeň',
+        'mena': 'EUR',
+        'dulezita mesta': ['Graz', 'Linz', 'Štýrský Hradec']
+    }
+}
+
+'''
+1. Vytvorte promennou zeme, do ktere ulozite vstup uzivatele
+2. Vytvorte promennou list_zeme, do ktere za pomoci list(slovnik.keys()) ulozite klice slovniku
+3. Otestujte, jestli je zeme v list_zeme:
+    - pokud ano, zobrazte uzivateli: "Zeme je v seznamu, zadej pozadovany udaj (hlavni mesto, mena, dulezita mesta)"
+    - pokud ne, zobrazte uzivateli: Zeme neni v seznamu, ukoncuji skript
+4. Vytvorte promennou udaj, do ktere ulozite vstup uzivatele (prvni odrazka bodu 3)
+5. Zkuste (try) vypsat hodnotu pro danou zemi a udaj. Napr. pokud uzivatel zada slovensko a pak hlavni mesto, tak se vypise Bratislava
+5a. Predchozi bod osetrete pres except KeyError pro pripad, ze uzivatel zada udaj, ktery nezname
+'''
+
+
+'''
+6. Do promenne nova_zeme ulozte vstup uzivatele
+7. Pokud uzivatel zada zemi, ktera:
+    -  je klicem slovniku slovnik, vypiste "Zeme jiz existuje"
+    - neni klicem slovniku slovnik, pridejte tuto zemi jako novy klic slovniku, hodnoty tohoto klice bude prazdny slovnik (nebudeme po uzivateli chtit)
+8. Do promenne udaje ulozte vstup uzivatele, tj. input('Zadejte carkou oddelene hodnoty pro hlavni mesto, mena)
+9. Hodnotu promenne udaje prevedte za pomoci udaje.split(',') na list
+10. Zkuste aktualizovat hodnotu klice hlavni mesto a mena dle uzivatelem zadanych hodnot, pokud se to z jakehokoliv duvodu nepodari, vypiste uzivateli 
+"Aktualizace selhala"ArithmeticError
+-
+
+
+
+'''
+
